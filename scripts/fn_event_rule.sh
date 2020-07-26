@@ -30,5 +30,5 @@ oci events rule create --compartment-id $TF_VAR_oci_compartment_ocid \
 }}" \
 --actions file://actions.json --is-enabled true
 
-
+rm actions.json
 

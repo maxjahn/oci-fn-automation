@@ -68,37 +68,37 @@ func main() {
 
 func dispatchHandler(ctx context.Context, in io.Reader, out io.Writer) {
 
-	input := &EventsInput{}
-	json.NewDecoder(in).Decode(input)
+	event := &EventsInput{}
+	json.NewDecoder(in).Decode(event)
 
 	imgBucket = os.Getenv("OCI_BUCKET_NAME")
 
 	imgRex := regexp.MustCompile(`(.jpg|.gif|.png)$`)
-	imgType := imgRex.FindString(strings.ToLower(input.Data.ResourceID))
+	imgType := imgRex.FindString(strings.ToLower(event.Data.ResourceID))
 
-	if imgType == "" || strings.Contains(input.Data.ResourceName, "thumb/") {
-		log.Println("Skip processing ", input.Data.ResourceName)
+	if imgType == "" || strings.Contains(event.Data.ResourceName, "thumb/") {
+		log.Println("Skip processing ", event.Data.ResourceName)
 		return
 	}
 
-	switch input.EventType {
+	switch event.EventType {
 	case "com.oraclecloud.objectstorage.deleteobject":
-		outMsg, err := handleDelete(ctx, input)
+		outMsg, err := handleDelete(ctx, event)
 		if err != nil {
 			log.Println(outMsg, err)
 		}
 	case "com.oraclecloud.objectstorage.createobject":
-		outMsg, err := handleCreateUpdate(ctx, imgType, input)
+		outMsg, err := handleCreateUpdate(ctx, imgType, event)
 		if err != nil {
 			log.Println(outMsg, err)
 		}
 	case "com.oraclecloud.objectstorage.updateobject":
-		outMsg, err := handleCreateUpdate(ctx, imgType, input)
+		outMsg, err := handleCreateUpdate(ctx, imgType, event)
 		if err != nil {
 			log.Println(outMsg, err)
 		}
 	default:
-		log.Fatalln("received unhandled event ", input.EventType)
+		log.Fatalln("received unhandled event ", event.EventType)
 	}
 
 }
