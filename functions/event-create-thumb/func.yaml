@@ -1,0 +1,7 @@
+schema_version: 20180708
+name: event-create-thumb
+version: 0.0.74
+runtime: go
+entrypoint: ./func
+config:
+  OCI_BUCKET_NAME: img
