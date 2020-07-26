@@ -1,6 +1,6 @@
 schema_version: 20180708
 name: event-create-thumb
-version: 0.0.74
+version: 0.0.75
 runtime: go
 entrypoint: ./func
 config:

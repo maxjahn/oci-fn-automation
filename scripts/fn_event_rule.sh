@@ -2,7 +2,7 @@
 
 export OCI_fn_fun_ocid=`oci fn function list \
 --application-id $OCI_auto_app_ocid \
-| jq '.data[]|.id' | tr -d \"`
+| jq '.data[] | select(."display-name"=="event-create-thumb") | .id'| tr -d \"`
 
 read -r -d '' ACTIONS_JSON <<- _EOL_
 {
