@@ -87,12 +87,7 @@ func dispatchHandler(ctx context.Context, in io.Reader, out io.Writer) {
 		if err != nil {
 			log.Println(outMsg, err)
 		}
-	case "com.oraclecloud.objectstorage.createobject":
-		outMsg, err := handleCreateUpdate(ctx, imgType, event)
-		if err != nil {
-			log.Println(outMsg, err)
-		}
-	case "com.oraclecloud.objectstorage.updateobject":
+	case "com.oraclecloud.objectstorage.createobject", "com.oraclecloud.objectstorage.updateobject":
 		outMsg, err := handleCreateUpdate(ctx, imgType, event)
 		if err != nil {
 			log.Println(outMsg, err)
