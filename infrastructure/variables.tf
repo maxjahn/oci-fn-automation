@@ -26,6 +26,10 @@ variable "oci_cidr_public_subnet" {
   default = "10.0.2.0/24"
 }
 
+variable "oci_cidr_api_subnet" {
+  default = "10.0.3.0/29"
+}
+
 variable "ssh_public_key" {
 }
 

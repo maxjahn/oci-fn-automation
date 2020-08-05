@@ -10,3 +10,4 @@ export TF_VAR_oci_region=eu-frankfurt-1
 export TF_VAR_oci_cidr_vcn="10.0.0.0/16"
 export TF_VAR_oci_cidr_private_subnet="10.0.1.0/24"
 export TF_VAR_oci_cidr_public_subnet="10.0.2.0/24"
+export TF_VAR_oci_cidr_api_subnet="10.0.3.0/29"
