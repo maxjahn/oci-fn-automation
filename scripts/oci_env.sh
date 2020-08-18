@@ -1,6 +1,0 @@
-#!/bin/bash
-export OCI_storage_tenancy=fr4sem1lm5ss
-export OCI_storage_bucket=img
-export OCI_automation_user_ocid=ocid1.user.oc1..aaaaaaaa7xdexcvigr3tqzufjds4pzxmcglxdv7pm3awn2oxuvnxzflvhesq
-export OCI_automation_user=auto-user
-export OCI_auto_app_ocid=ocid1.fnapp.oc1.eu-frankfurt-1.aaaaaaaaagiyfayghjjtsh5i3tprxe6ozs47z2wggk4nqkokpiazv4a4luqa 
