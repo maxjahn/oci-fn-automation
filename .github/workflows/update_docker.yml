@@ -1,7 +1,7 @@
 name: docker container update
 on:
-  push:
-    branches: [ master ]
+  schedule:
+    - cron: '0 0 5 2,4,6,8,10,12 *'
 jobs:
   build:
     # The type of runner that the job will run on
