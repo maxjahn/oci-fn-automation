@@ -16,4 +16,4 @@ jobs:
       env:
         DUSER: ${{ secrets.DOCKER_USERNAME }}
         DPASS: ${{ secrets.DOCKER_PASSWORD }}
-      run: echo ${DPASS} | docker login -u ${DUSER} --password-stdin
+      run: echo ${DPASS} | docker login docker.io -u ${DUSER} --password-stdin
