@@ -16,4 +16,4 @@ jobs:
       env:
         DUSER: ${{ secrets.DOCKER_USERNAME }}
         DPASS: ${{ secrets.DOCKER_PASSWORD }}
-      run: docker login -u "$DUSER" -p "$DPASS" ;ruby build.rb
+      run: docker login -u "$DUSER" -p "$DPASS"
