@@ -22,7 +22,6 @@
 **/infrastructure/terraform.tfstate
 **/infrastructure/terraform.tfstate.backup
 
-**/functions/**Dockerfile**
 
 **/functions/oci_env.sh
 **/.DS_Store
